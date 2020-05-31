@@ -33,7 +33,7 @@
     </div>
     <div class="form-group">
       <label for="pwd">Phone No:</label>
-      <input type="text" class="form-control" placeholder="Enter Phone No." name="phoneNo" pattern="[0-9]{10}" title="Enter 10 digit Phone Number">
+      <input type="text" class="form-control" placeholder="Enter Phone No." name="phoneNo" pattern="[0-9]{10}" title="Enter 10 digit Phone Number" required>
     </div>
     <div class="form-group">
       <label for="pwd">Status:</label>

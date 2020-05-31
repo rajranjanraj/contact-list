@@ -39,7 +39,7 @@
          </tr> 
          <tr>    
           <td>Phone No :</td>    
-          <td><form:input path="phoneNo" pattern="[0-9]{10}" title="Enter 10 digit Phone Number" class="form-control"/></td>  
+          <td><form:input path="phoneNo" pattern="[0-9]{10}" title="Enter 10 digit Phone Number" class="form-control" required="true"/></td>  
          </tr>   
          <tr>    
           <td><form:label path = "status">Status :</form:label></td>    
