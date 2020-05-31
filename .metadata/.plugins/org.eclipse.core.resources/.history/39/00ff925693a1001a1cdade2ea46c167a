@@ -1,0 +1,50 @@
+package contact.list.dao;
+
+import java.util.List;
+
+import javax.swing.tree.RowMapper;
+
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import contact.list.bean.User;
+
+public class UserDao {
+
+	JdbcTemplate template;
+	
+	public void setTemplate(JdbcTemplate template) {    
+	    this.template = template;    
+	} 
+	
+	public int save(User u){    
+	    String sql="insert into User001(firstName,lasttName,emailId,phoneNo,status) values('"+u.getFirstName()+"',"+u.getLastName()+"',"+u.getEmailId()+"',"+u.getPhoneNo()+",'"+u.getStatus()+"')";    
+	    return template.update(sql);    
+	}   
+	
+	public int update(User u){    
+	    String sql="update User001 set firstName='"+u.getFirstName()+"', lasttName="+u.getLastName()+"', emailId="+u.getEmailId()+"', phoneNo="+u.getPhoneNo()+",status='"+u.getStatus()+"' where id="+u.getId()+"";    
+	    return template.update(sql);    
+	}    
+	public int delete(int id){    
+	    String sql="delete from User001 where id="+id+"";    
+	    return template.update(sql);    
+	}    
+	public User getUserById(int id){    
+	    String sql="select * from User001 where id=?";    
+	    return template.queryForObject(sql, new Object[]{id},new BeanPropertyRowMapper<User>(User.class));    
+	}    
+	public List<User> getUser(){    
+	    return template.query("select * from User001",new RowMapper(){    
+	        public Emp mapRow(ResultSet rs, int row) throws SQLException {    
+	        	User u=new User();    
+	            u.setId(rs.getInt(1));    
+	            u.setName(rs.getString(2));    
+	            u.setSalary(rs.getFloat(3));    
+	            u.setDesignation(rs.getString(4));    
+	            return e;    
+	        }    
+	    });    
+	}
+	
+}

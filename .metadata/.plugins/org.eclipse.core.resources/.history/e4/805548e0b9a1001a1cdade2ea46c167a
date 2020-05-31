@@ -1,0 +1,5 @@
+package contact.list.controller;
+
+public class UserController {
+
+}
