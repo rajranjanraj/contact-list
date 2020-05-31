@@ -26,7 +26,7 @@
 <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>    
 <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>    
 <property name="username" value="system"></property>    
-<property name="password" value="Oracle1234"></property>    
+<property name="password" value="Oracle"></property>    
 </bean>    
     
 <bean id="jdbct" class="org.springframework.jdbc.core.JdbcTemplate">    
